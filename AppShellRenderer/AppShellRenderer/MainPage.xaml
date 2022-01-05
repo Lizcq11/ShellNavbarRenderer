@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:autoComplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+             Shell.NavBarIsVisible="True"
+             Shell.NavBarHasShadow="False"
+             BackgroundColor="White"
+             Shell.ForegroundColor="White"
+             Shell.FlyoutBehavior="Flyout"
+             x:Class="AppShellRenderer.MainPage">
+
+    <StackLayout>
+        <Grid HeightRequest="170" RowDefinitions="Auto,Auto">
+            <StackLayout Padding="{OnPlatform Android='20,60',iOS='20,40,20,60'}" Margin="{OnPlatform Android='0,-50,0,0',iOS='0'}">
+                <Frame HasShadow="False" HeightRequest="20" CornerRadius="10" BorderColor="#ced2d9" BackgroundColor="White">
+                    <Grid RowDefinitions="40" ColumnDefinitions="30,*">
+                        <Image Source="ic_searchN.png" Margin="0,-15,0,0" ></Image>
+                        <autoComplete:SfAutoComplete x:Name="searchConsulta" Grid.Column="1" AutoCompleteMode="Suggest" SuggestionMode="Contains" HorizontalOptions="FillAndExpand" Watermark="Search" Margin="0,-15,0,0" ShowBorder="False" >
+                        </autoComplete:SfAutoComplete>
+                    </Grid>
+                </Frame>
+            </StackLayout>
+          
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="1,0">
+                    <GradientStop Color="#17d3eb" Offset="0.0"></GradientStop>
+                    <GradientStop Color="#012e8b" Offset="1.0"></GradientStop>
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+        
+        <Frame HasShadow="{OnPlatform Android='True',iOS='False'}"   Margin="20,-45,20,0" Padding="0" HeightRequest="110" VerticalOptions="Start" CornerRadius="10" BackgroundColor="White">
+            <Grid HorizontalOptions="Center" VerticalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Text="350" FontAttributes="Bold" Grid.Row="0" FontSize="22" VerticalOptions="Center" HorizontalOptions="Center"></Label>
+                <Label Text="Items added" TextColor="#606a7b" FontSize="16" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"></Label>
+            </Grid>
+        </Frame>
+        
+        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="Center">
+            <Label Text="Main Page"></Label>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
